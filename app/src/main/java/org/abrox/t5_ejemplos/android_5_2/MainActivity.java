@@ -16,27 +16,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button b = (Button) findViewById(R.id.idBoton);
 
 
     }
 
-    public void abrirSecundaria(View v){
 
-        Intent i = new Intent(this, SecondaryActivity.class);
-        //startActivity(i); //Si solo quisieramos abrirla sin respuesta.
-        EditText ed = (EditText) findViewById(R.id.edTexto);
+
+    public void abreVentana(View view) {
+        Intent i =  new Intent(this, SecondaryActivity.class);
+
+        EditText ed = findViewById(R.id.edTexto);
 
         i.putExtra("mensaje", ed.getText().toString());
-        startActivityForResult(i,1);
 
+        startActivityForResult(i, 1);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Toast.makeText(this, data.getStringExtra("contestacion"), Toast.LENGTH_SHORT).show();
     }
 
     //Para recibir la respuesta de la otra actividad.
-    @Override
+    /*@Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         String mesajeContestacion = data.getStringExtra("contestacion");
         Toast.makeText(this, mesajeContestacion, Toast.LENGTH_LONG).show();
-    }
+    }*/
 }

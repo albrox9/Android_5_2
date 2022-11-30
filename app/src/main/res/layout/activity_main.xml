@@ -6,29 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/idBoton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ABRIR SECUNDARIA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.377"
-        android:onClick="abrirSecundaria"/>
-
     <EditText
         android:id="@+id/edTexto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Escribe algo"
+        android:hint="Escribe aqui"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/idBoton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/idBoton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="abreVentana"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTexto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
